@@ -19,6 +19,7 @@
 		110994C4218EB56C004331FE /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110994C3218EB56C004331FE /* UIView+IBInspectable.swift */; };
 		110994C7218EB619004331FE /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110994C6218EB619004331FE /* UIViewController+Storyboard.swift */; };
 		110994C9218EB674004331FE /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110994C8218EB674004331FE /* UIImage+Gif.swift */; };
+		11D2CF3A22112DD0000A7A4D /* Date+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		110994C3218EB56C004331FE /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		110994C6218EB619004331FE /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		110994C8218EB674004331FE /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Conversion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,9 @@
 			children = (
 				110994C5218EB5F8004331FE /* UIViewController */,
 				110994BE218EB322004331FE /* Codable */,
-				110994BD218EB30C004331FE /* UIView */,
-				110994BC218EB2F9004331FE /* UIImage */,
+				110994BD218EB30C004331FE /* View */,
+				110994BC218EB2F9004331FE /* IImage */,
+				11D2CF3822112D68000A7A4D /* Date */,
 				1109948E218EB28D004331FE /* AppDelegate.swift */,
 				11099490218EB28D004331FE /* ViewController.swift */,
 				11099492218EB28D004331FE /* Main.storyboard */,
@@ -139,21 +142,21 @@
 			path = ExtensionsUITests;
 			sourceTree = "<group>";
 		};
-		110994BC218EB2F9004331FE /* UIImage */ = {
+		110994BC218EB2F9004331FE /* IImage */ = {
 			isa = PBXGroup;
 			children = (
 				110994C8218EB674004331FE /* UIImage+Gif.swift */,
 			);
-			path = UIImage;
+			path = IImage;
 			sourceTree = "<group>";
 		};
-		110994BD218EB30C004331FE /* UIView */ = {
+		110994BD218EB30C004331FE /* View */ = {
 			isa = PBXGroup;
 			children = (
 				110994C1218EB4C0004331FE /* UIView+Xib.swift */,
 				110994C3218EB56C004331FE /* UIView+IBInspectable.swift */,
 			);
-			path = UIView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		110994BE218EB322004331FE /* Codable */ = {
@@ -170,6 +173,14 @@
 				110994C6218EB619004331FE /* UIViewController+Storyboard.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		11D2CF3822112D68000A7A4D /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				110994C4218EB56C004331FE /* UIView+IBInspectable.swift in Sources */,
 				110994C2218EB4C0004331FE /* UIView+Xib.swift in Sources */,
 				110994C0218EB355004331FE /* Codable+Conversion.swift in Sources */,
+				11D2CF3A22112DD0000A7A4D /* Date+Conversion.swift in Sources */,
 				110994C7218EB619004331FE /* UIViewController+Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
