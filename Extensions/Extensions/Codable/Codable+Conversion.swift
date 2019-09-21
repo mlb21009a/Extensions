@@ -13,11 +13,17 @@ extension Encodable {
     ///
     /// - Parameter instance: インスタンス
     /// - Returns: Data
-    static func convertData(_ instance:Self) -> Data? {
+     static func convertData(_ instance: Self, dateFormat: String? = nil) -> Data {
         let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
+        if let dateFormat = dateFormat {
+            let f = DateFormatter()
+            f.dateFormat = dateFormat
+            encoder.dateEncodingStrategy = .formatted(f)
+        } else {
+            encoder.dateEncodingStrategy = .iso8601
+        }
         encoder.keyEncodingStrategy = .convertToSnakeCase
-        return try? encoder.encode(instance)
+        return try! encoder.encode(instance)
     }
 }
 
@@ -27,16 +33,17 @@ extension Decodable {
     ///
     /// - Parameter data: Data
     /// - Returns: 自型
-    static func convertSelf(_ data:Data) -> Self? {
+    static func convertSelf(_ data:Data, dateFormat: String? = nil) -> Self {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted({
+        if let dateFormat = dateFormat {
             let f = DateFormatter()
-            f.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            return f
-            }())
+            f.dateFormat = dateFormat
+            decoder.dateDecodingStrategy = .formatted(f)
+        } else {
+            decoder.dateDecodingStrategy = .iso8601
+        }
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
-        let instance = try? decoder.decode(Self.self, from: data)
-        return instance
+
+        return try! decoder.decode(Self.self, from: data)
     }
 }
