@@ -37,6 +37,8 @@ extension String {
             dateFormat.replaceSubrange(dateFormat.range(of: element)!, with: formats[offset])
         }
 
+       dateFormat = dateFormat.replacingOccurrences(of: "T", with: "'T'")
+
         // +00:00の部分をZにする
         if let range = dateFormat.range(of: "[+][0-9]{2}:[0-9]{2}", options: .regularExpression, range: nil, locale: .current) {
             dateFormat.replaceSubrange(range, with: formats.last!)
