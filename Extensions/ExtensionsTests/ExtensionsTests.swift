@@ -47,6 +47,35 @@ class ExtensionsTests: XCTestCase {
 
     }
 
+    func testDateExtension() {
+
+        let testDate = Date(timeIntervalSince1970: 0)
+
+        XCTAssertEqual(testDate.toString(format: "YYYY年MM月dd日HH時mm分ss秒"), "1970年01月01日09時00分00秒")
+
+        /*
+         APIによって日時のフォーマットが違うとかふざけた仕様でも多分大丈夫と思う
+         ってか統一してくれるのが一番いいんだけどね。
+         若干の皮肉にを込めて作りました
+         */
+        let testStr = "1970-01-01T00:00:00+00:00"
+        XCTAssertEqual(testStr.toDate(), testDate)
+
+        let testStr2 = "1970-01-01-00:00:00"
+        XCTAssertEqual(testStr2.toDate(), Date(timeIntervalSince1970: -60*60*9))
+
+        let testStr３ = "1970月01月01日00:00:00"
+        XCTAssertEqual(testStr３.toDate(), Date(timeIntervalSince1970: -60*60*9))
+
+        let testStr4 = "1970月1月1日0:0:0"
+        XCTAssertEqual(testStr4.toDate(), Date(timeIntervalSince1970: -60*60*9))
+
+        let testStr5 = "1970/1/1/0:0:0"
+        XCTAssertEqual(testStr5.toDate(), Date(timeIntervalSince1970: -60*60*9))
+
+        
+    }
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
