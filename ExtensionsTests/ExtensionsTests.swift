@@ -76,6 +76,11 @@ class ExtensionsTests: XCTestCase {
         
     }
 
+    func testStringExtension() {
+        let money = 1000
+        XCTAssertEqual(money.convertCurrency(locale: Locale(identifier: "ja_JP")), "¥1,000")
+    }
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
