@@ -14,8 +14,9 @@ extension Date {
     ///
     /// - Parameter format: フォーマット
     /// - Returns: 文字列
-    func toString(format: String) -> String {
+    func toString(format: String, locale: Locale = .current) -> String {
         let formatter = DateFormatter()
+        formatter.locale = locale
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
@@ -27,8 +28,9 @@ extension String {
     /// 文字列をDateに変換
     ///
     /// - Returns: Date
-    func toDate() -> Date? {
+    func toDate(locale: Locale = .current) -> Date? {
         let formatter = DateFormatter()
+        formatter.locale = locale
         var dateFormat = self
         let formats = ["YYYY", "MM", "dd", "hh", "mm", "ss", "Z"]
         let array = self.components(separatedBy: NSCharacterSet.decimalDigits.inverted).filter { !$0.isEmpty }[0..<formats.count-1]
