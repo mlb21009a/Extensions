@@ -10,13 +10,12 @@ import UIKit
 
 extension UICollectionViewLayout {
 
-
     /// セルのレイアウト
     /// - Parameters:
     ///   - space: セルとセルの間隔
     ///   - edgeInsets: セルと端の間隔
     /// - Returns: レイアウト
-    func createLayout(space: CGFloat = 0, edgeInsets: NSDirectionalEdgeInsets = .zero) -> UICollectionViewLayout {
+    static func createLayout(space: CGFloat = 0, edgeInsets: NSDirectionalEdgeInsets = .zero) -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .estimated(10))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
