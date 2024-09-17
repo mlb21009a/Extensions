@@ -16,7 +16,7 @@ protocol StoryboardIdentifiable {
 }
 
 extension StoryboardIdentifiable where Self:UIViewController {
-    static func instantiate() -> Self {
+    @MainActor static func instantiate() -> Self {
         let name = String(describing: self)
         let storyboard = UIStoryboard(name: name, bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! Self

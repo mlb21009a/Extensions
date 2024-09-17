@@ -16,7 +16,7 @@ protocol XibIdentifiable {
 }
 
 extension XibIdentifiable where Self:UIView {
-    static func instantiate() -> Self {
+    @MainActor static func instantiate() -> Self {
         let name = String(describing: self)
         let nib = UINib(nibName: name, bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil).first as! Self

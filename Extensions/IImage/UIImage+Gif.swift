@@ -13,7 +13,7 @@ extension UIImage {
     ///
     /// - Parameter data: assetCatelogにあるgifファイル
     /// - Returns: 変換したUIImage
-    static func animatedGIF(data: Data) -> UIImage? {
+    @MainActor static func animatedGIF(data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
