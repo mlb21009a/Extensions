@@ -8,15 +8,14 @@
 
 import UIKit
 
-protocol StoryboardIdentifiable {
+protocol StoryboardIdentifiable where Self:UIViewController {
     /// 対応したstoryboradのUIViewcontrollerを返す
     ///
     /// - Returns: UIViewcontroller
     static func instantiate() -> Self
 }
-
-extension StoryboardIdentifiable where Self:UIViewController {
-    @MainActor static func instantiate() -> Self {
+extension StoryboardIdentifiable {
+    static func instantiate() -> Self {
         let name = String(describing: self)
         let storyboard = UIStoryboard(name: name, bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! Self

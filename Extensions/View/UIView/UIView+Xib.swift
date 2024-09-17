@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol XibIdentifiable {
+protocol XibIdentifiable where Self:UIView {
     /// 対応したxibファイルをviewを返す
     ///
     /// - Returns: view
     static func instantiate() -> Self
 }
 
-extension XibIdentifiable where Self:UIView {
-    @MainActor static func instantiate() -> Self {
+extension XibIdentifiable  {
+    static func instantiate() -> Self {
         let name = String(describing: self)
         let nib = UINib(nibName: name, bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil).first as! Self

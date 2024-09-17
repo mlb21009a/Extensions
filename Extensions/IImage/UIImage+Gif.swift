@@ -13,7 +13,7 @@ extension UIImage {
     ///
     /// - Parameter data: assetCatelogにあるgifファイル
     /// - Returns: 変換したUIImage
-    @MainActor static func animatedGIF(data: Data) -> UIImage? {
+    static func animatedGIF(data: Data) async -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
@@ -40,9 +40,9 @@ extension UIImage {
             }
             
             duration += delayTime
-            
-            // pre-render
-            let image = UIImage(cgImage: imageRef, scale: UIScreen.main.scale, orientation: .up)
+
+                // pre-render
+            let image = await UIImage(cgImage: imageRef, scale: UIScreen.main.scale, orientation: .up)
             UIGraphicsBeginImageContextWithOptions(image.size, false, 0.0)
             image.draw(in: CGRect(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height))
             let renderedImage = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(.alwaysOriginal)
@@ -50,6 +50,7 @@ extension UIImage {
             if let renderedImage = renderedImage {
                 images.append(renderedImage)
             }
+
         }
         
         return UIImage.animatedImage(with: images, duration: duration)
