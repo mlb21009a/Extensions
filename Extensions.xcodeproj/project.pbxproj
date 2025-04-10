@@ -21,6 +21,7 @@
 		110994C9218EB674004331FE /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110994C8218EB674004331FE /* UIImage+Gif.swift */; };
 		11159F532337AD80003F31B8 /* String+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11159F522337AD80003F31B8 /* String+Conversion.swift */; };
 		11608CB12C60AE3500C2530D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11608CB02C60AE3500C2530D /* API.swift */; };
+		1160EEE52DA7A0E800651C31 /* StackViewBuider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160EEE42DA7A0E800651C31 /* StackViewBuider.swift */; };
 		11BA77B429388FFF007CC7DB /* UITextView+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BA77B329388FFF007CC7DB /* UITextView+HTML.swift */; };
 		11D1F1ED266DF74A002A604C /* UICollectionViewLayout+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F1EC266DF74A002A604C /* UICollectionViewLayout+layout.swift */; };
 		11D2CF3A22112DD0000A7A4D /* Date+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */; };
@@ -64,6 +65,7 @@
 		110994C8218EB674004331FE /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		11159F522337AD80003F31B8 /* String+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Conversion.swift"; sourceTree = "<group>"; };
 		11608CB02C60AE3500C2530D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1160EEE42DA7A0E800651C31 /* StackViewBuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewBuider.swift; sourceTree = "<group>"; };
 		11BA77B329388FFF007CC7DB /* UITextView+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HTML.swift"; sourceTree = "<group>"; };
 		11D1F1EC266DF74A002A604C /* UICollectionViewLayout+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+layout.swift"; sourceTree = "<group>"; };
 		11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Conversion.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				110994C1218EB4C0004331FE /* UIView+Xib.swift */,
 				110994C3218EB56C004331FE /* UIView+IBInspectable.swift */,
+				1160EEE42DA7A0E800651C31 /* StackViewBuider.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				110994C2218EB4C0004331FE /* UIView+Xib.swift in Sources */,
 				11BA77B429388FFF007CC7DB /* UITextView+HTML.swift in Sources */,
 				110994C0218EB355004331FE /* Codable+Conversion.swift in Sources */,
+				1160EEE52DA7A0E800651C31 /* StackViewBuider.swift in Sources */,
 				11D2CF3A22112DD0000A7A4D /* Date+Conversion.swift in Sources */,
 				11159F532337AD80003F31B8 /* String+Conversion.swift in Sources */,
 				11D1F1ED266DF74A002A604C /* UICollectionViewLayout+layout.swift in Sources */,
