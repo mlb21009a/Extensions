@@ -12,19 +12,19 @@ protocol API {
     associatedtype Response: Decodable
     var url: String { get }
     var params: [String: String] { get }
-    var mothod: String { get }
+    var method: String { get }
     func request() async throws -> Response
 }
 
 extension API {
     func request() async throws -> Response {
         var urlComponents = URLComponents(string: url)!
-        if mothod == "GET" {
+        if method == "GET" {
             urlComponents.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value) }
         }
         var request = URLRequest(url: urlComponents.url!)
-        request.httpMethod = mothod
-        if mothod != "GET" {
+        request.httpMethod = method
+        if method != "GET" {
             request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
         }
         do {
@@ -34,7 +34,7 @@ extension API {
                 throw APIError.noResponse
             }
             guard 200 ..< 300 ~= urlResponse.statusCode else {
-                throw APIError.staus(urlResponse.statusCode)
+                throw APIError.status(urlResponse.statusCode)
             }
             return response
 
@@ -46,6 +46,6 @@ extension API {
 
 enum APIError: Error {
     case noResponse
-    case staus(Int)
+    case status(Int)
     case other(Error)
 }
