@@ -16,14 +16,14 @@ import UIKit
      view3
  }
  */
-@resultBuilder struct StackViewBuider {
+@resultBuilder struct StackViewBuilder {
     static func buildBlock(_ components: UIView...) -> [UIView] {
         components.compactMap { $0 }
     }
 }
 
 extension UIStackView {
-    func views(@StackViewBuider _ views: () -> [UIView]) {
+    func views(@StackViewBuilder _ views: () -> [UIView]) {
         for view in views() {
             self.addArrangedSubview(view)
         }
