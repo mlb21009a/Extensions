@@ -32,12 +32,12 @@ class ExtensionsTests: XCTestCase {
          Data型に変換
          あんま使う機会ないけど独自クラスをUserDefaultに保存する時とかでも使える
          */
-        let data = Hoge.convertData(test)
+        let data = Data(test)
         /*
          Data型から指定のクラスへ変換
          APIのレスポンスのパースに使う時に便利かも
         */
-        let hoge = Hoge.convertSelf(data)
+        let hoge = Hoge(data)
 
         XCTAssertEqual(hoge.name, "Hoge太郎")
         XCTAssertEqual(hoge.age, 100)

@@ -8,12 +8,13 @@
 
 import Foundation
 
-extension Encodable {
-    /// Data型に変換
+extension Data {
+
+    /// Data型を生成
     ///
     /// - Parameter instance: インスタンス
     /// - Returns: Data
-     static func convertData(_ instance: Self, dateFormat: String? = nil) -> Data {
+    init<T: Encodable>(_ instance: T, dateFormat: String? = nil) {
         let encoder = JSONEncoder()
         if let dateFormat = dateFormat {
             let f = DateFormatter()
@@ -23,17 +24,16 @@ extension Encodable {
             encoder.dateEncodingStrategy = .iso8601
         }
         encoder.keyEncodingStrategy = .convertToSnakeCase
-        return try! encoder.encode(instance)
+        self = try! encoder.encode(instance)
     }
 }
 
 extension Decodable {
-    
-    /// 自型に変換
+
+    /// Dataを元に初期化
     ///
     /// - Parameter data: Data
-    /// - Returns: 自型
-    static func convertSelf(_ data:Data, dateFormat: String? = nil) -> Self {
+    init(_ data:Data, dateFormat: String? = nil) {
         let decoder = JSONDecoder()
         if let dateFormat = dateFormat {
             let f = DateFormatter()
@@ -44,6 +44,6 @@ extension Decodable {
         }
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        return try! decoder.decode(Self.self, from: data)
+        self = try! decoder.decode(Self.self, from: data)
     }
 }
