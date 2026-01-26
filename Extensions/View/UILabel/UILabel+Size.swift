@@ -21,4 +21,18 @@ extension UILabel {
 
         return measureHeight + abs(self.font!.descender)
     }
+
+    func lineCount() -> Int {
+        guard let text = self.text else { return 0 }
+        let font = self.font!
+        let rect = text.boundingRect(
+            with: .init(width: self.bounds.width, height: .greatestFiniteMagnitude),
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            attributes: [.font: font],
+            context: nil
+        )
+
+        return Int(ceil(rect.height / font.lineHeight))
+
+    }
 }
