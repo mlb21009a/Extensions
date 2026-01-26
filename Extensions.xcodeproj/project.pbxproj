@@ -26,6 +26,7 @@
 		11BA77B429388FFF007CC7DB /* UITextView+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BA77B329388FFF007CC7DB /* UITextView+HTML.swift */; };
 		11D1F1ED266DF74A002A604C /* UICollectionViewLayout+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F1EC266DF74A002A604C /* UICollectionViewLayout+layout.swift */; };
 		11D2CF3A22112DD0000A7A4D /* Date+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */; };
+		11E2BCEE2F272046006D22BB /* UILabel+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2BCED2F272046006D22BB /* UILabel+Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		11BA77B329388FFF007CC7DB /* UITextView+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HTML.swift"; sourceTree = "<group>"; };
 		11D1F1EC266DF74A002A604C /* UICollectionViewLayout+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+layout.swift"; sourceTree = "<group>"; };
 		11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Conversion.swift"; sourceTree = "<group>"; };
+		11E2BCED2F272046006D22BB /* UILabel+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Size.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		110994BD218EB30C004331FE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11E2BCEF2F27206E006D22BB /* UILabel */,
 				11BA77B62938901D007CC7DB /* UITextView */,
 				11BA77B529389012007CC7DB /* UIView */,
 			);
@@ -239,6 +242,14 @@
 				11D2CF3922112DD0000A7A4D /* Date+Conversion.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		11E2BCEF2F27206E006D22BB /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				11E2BCED2F272046006D22BB /* UILabel+Size.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +392,7 @@
 				1109948F218EB28D004331FE /* AppDelegate.swift in Sources */,
 				110994C9218EB674004331FE /* UIImage+Gif.swift in Sources */,
 				110994C4218EB56C004331FE /* UIView+IBInspectable.swift in Sources */,
+				11E2BCEE2F272046006D22BB /* UILabel+Size.swift in Sources */,
 				110994C2218EB4C0004331FE /* UIView+Xib.swift in Sources */,
 				11BA77B429388FFF007CC7DB /* UITextView+HTML.swift in Sources */,
 				110994C0218EB355004331FE /* Codable+Conversion.swift in Sources */,
